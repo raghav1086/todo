@@ -1,0 +1,15 @@
+<h1> Add Todo item</h1>
+<form>
+  <input type="text" class="txt" name="name" placeholder="Todo item" [(ngModel)]="todoItem">
+  <input type="submit" class="btn" [value]="addItemText" (click)="addItem()">
+</form>
+<div>
+  <h2>Your Todo list has  ({{ itemCount }}) items</h2>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let todo of todos; let i = index" (click)="removeItem(i)">
+      {{ todo }}
+    </li>
+  </ul>
+</div>
